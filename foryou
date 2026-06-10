@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Do You Love Me? ❤️</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background:#ffe6f0;
+    height:100vh;
+    overflow:hidden;
+}
+
+h1{
+    margin-top:100px;
+    color:#ff4081;
+}
+
+#yesBtn, #noBtn{
+    padding:15px 30px;
+    font-size:20px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    margin:20px;
+}
+
+#yesBtn{
+    background:#ff4081;
+    color:white;
+}
+
+#noBtn{
+    background:#ddd;
+    position:absolute;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Do You Love Me? ❤️</h1>
+
+<button id="yesBtn">Yes 💖</button>
+<button id="noBtn">No 😭</button>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+
+let size = 20;
+
+noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 100);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    size += 10;
+    yesBtn.style.fontSize = size + "px";
+});
+
+yesBtn.addEventListener("click", () => {
+    document.body.innerHTML = `
+        <h1 style="color:#ff4081;margin-top:150px;">
+            YAYYY!! I LOVE YOU TOO ❤️🥰
+        </h1>
+    `;
+});
+</script>
+
+</body>
+</html>
